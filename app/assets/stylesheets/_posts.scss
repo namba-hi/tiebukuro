@@ -38,15 +38,20 @@
           text-decoration: none;
           color: white;
           line-height: 62px;
-          padding-right: 30px;
+          margin-right: 30px;
         }
         &__new {
-          font-size: 18px;
-            text-decoration: none;
-            line-height: 62px;
-            color: white;
+          height: 40px;
+          color: white;
+          float: right;
+          border: solid 1px white;
+          margin-top: 14px;
+          padding: 0 5px;
+          position: relative;
           &__btn {
-            
+            font-size: 18px;
+            text-decoration: none;
+            line-height: 40px;
           }
         }
       }
