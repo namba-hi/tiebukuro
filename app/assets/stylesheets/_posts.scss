@@ -123,19 +123,55 @@
       width: 28%;
       float: right;
       background-color: dimgrey;
+        
       &__form {
+        width: 100%;
+        height: 100px;
         &__input-box {
+          display: flex;
           width: 100%;
-          &searchform {
-            &__input {
-              width: 100%;
+          height: 200px;
+          margin-top: 20px;
+          input[type="text"] {
+            margin-left: 45px;
+            width: 200px;
+            height: 40px;
+            line-height: 200px;
+            }
+          &__submit-btn {
+            height: 30px;
+            width: 50px;
+            border-radius: 10%;
+            margin-top: 5px;
+            margin-left: 5px;
+            transition: 0.2s;
+            transform: translateY(2px);
+            }
+          }
+        }
+        &__theme-box {
+          width: 100%;
+          height: 500px;
+          &__theme {
+            width: 100%;
+            height: 40px;
+            color: white;
+            border-bottom-width:  white;
+            border-bottom-style: solid;
+            font-size: 20px;
+          }
+          &__article-box {
+            width: 100%;
+            height: 30px;
+            margin-top: 10px;
+            margin-left: 3px;
+            &__article {
+              font-size: 20px;
+              color: white;
             }
           }
         }
       }
-    }
-    }
+    } 
   }
-
-  
 }

@@ -1,8 +1,26 @@
 .content__box__side
   .content__box__side__form
     .content__box__side__form__input-box
-      %input#s.content__box__side__input-box__searchform__input{:name => "s", :placeholder => "検索", :type => "search", :value => ""}/
-    %input.content__box__side__form__input-box__submit-btn{:name => "commit", :type => "submit", :value => "検索"}/
+      %input#s.content__box__side__input-box__searchform{:name => "s", :placeholder => "検索", :type => "text", :value => ""}/
+      %input.content__box__side__form__input-box__submit-btn{:name => "commit", :type => "submit", :value => "検索"}/
+  .content__box__side__theme-box
+    .content__box__side__theme-box__theme
+      = "テーマ"
+    .content__box__side__theme-box__article-box
+      = link_to "#", class: "content__box__side__theme-box__article-box__article" do
+        = "生活系(0)"
+      .content__box__side__theme-box__article-box
+        = link_to "#", class: "content__box__side__theme-box__article-box__article" do
+          = "人生経験(0)"
+      .content__box__side__theme-box__article-box
+        = link_to "#", class: "content__box__side__theme-box__article-box__article" do
+          = "料理系(0)"
+      .content__box__side__theme-box__article-box
+        = link_to "#", class: "content__box__side__theme-box__article-box__article" do
+          = "家事系(0)"
+      .content__box__side__theme-box__article-box
+        = link_to "#", class: "content__box__side__theme-box__article-box__article" do
+          = "その他(0)"
 
       
 
