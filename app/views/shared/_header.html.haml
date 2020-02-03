@@ -3,10 +3,16 @@
     = link_to "#", class: "header__box__logo" do
       = "Our wisdom bag"
     .header__box__right
-      = link_to "#", class: "header__box__right__user" do
-        = "masa"
-      = link_to "#", class: "header__box__right__logout" do
-        = "ログアウト"
+      - if user_signed_in?
+        = link_to new_user_registration_path, class: "header__box__right__user" do
+          = "新規登録"
+        = link_to destroy_user_session_path, class: "header__box__right__logout", method: :delete do
+          = "ログアウト"
+      - else
+        = link_to new_user_registration_path, class: "header__box__right__user" do
+          = "新規登録"
+        = link_to new_user_session_path, class: "header__box__right__logout" do
+          = "ログイン"
       = link_to "#" do
         .header__box__right__new
           .header__box__right__new__btn
