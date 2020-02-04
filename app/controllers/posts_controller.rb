@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :move_to_index, except: [:index, :show]
   def index
     @posts = Post.all
   end
@@ -8,9 +9,14 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_params)
-    tag_list = params[:post][:tag_name].split(",")
-    @blog.save_blogs(tag_list)
+    @post = Post.create(post_params)
+    if @post.save
+      redirect_to root_path
+    else 
+      render :new
+    end
+    #tag_list = params[:post][:tag_name].split(",")
+    #@post.save_posts(tag_list)
   end
 
   def edit
