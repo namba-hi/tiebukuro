@@ -9,9 +9,9 @@
         .showform__box
           - if user_signed_in? && current_user.id == @post.user_id 
             .showform__box__editbox
-              = link_to "編集", "#", class: "showform__box__editbox__edit"
+              = link_to "編集", "/posts/#{@post.id}/edit", class: "showform__box__editbox__edit", method: :get
             .showform__box__deletebox
-              = link_to "削除", "#", class: "showform__box__deletebox__delete"
+              = link_to "削除", "#", class: "showform__box__deletebox__delete", method: :delete
         .showform__titlebox
           .showform__titlebox__title
             = @post.title
