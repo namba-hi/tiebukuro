@@ -19,6 +19,10 @@ class PostsController < ApplicationController
     #@post.save_posts(tag_list)
   end
 
+  def show
+    @post = Post.find(params[:id])
+  end
+
   def edit
   end
 
@@ -30,5 +34,9 @@ class PostsController < ApplicationController
 
   def move_to_index
     redirect_to action: :index unless user_signed_in?
+  end
+
+  def set_tag
+    @tags = Tag.find(params[:tag_id])
   end
 end

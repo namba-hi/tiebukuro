@@ -1,0 +1,25 @@
+.wrapper
+  = render "shared/header"
+  .content
+    .content__box
+      .showform
+        .showform__userbox
+          .showform__userbox__user
+            = @post.user.nickname + "さんの記事"
+        .showform__box
+          - if user_signed_in? && current_user.id == @post.user_id 
+            .showform__box__editbox
+              = link_to "編集", "#", class: "showform__box__editbox__edit"
+            .showform__box__deletebox
+              = link_to "削除", "#", class: "showform__box__deletebox__delete"
+        .showform__titlebox
+          .showform__titlebox__title
+            = @post.title
+        .showform__tagbox
+          .showform__tagbox__tag
+            - @post.tags.each do |tag|
+              = tag.name
+        .showform__contentbox
+          .showform__contentbox__content
+            = @post.content
+        
