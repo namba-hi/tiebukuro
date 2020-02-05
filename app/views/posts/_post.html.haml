@@ -1,0 +1,12 @@
+.content__box__main__articlebox
+  .content__box__main__articlebox__titlebox
+    = link_to "#", class:"content__box__main__articlebox__titlebox__title" do
+      = post.title
+  .content__box__main__articlebox__timebox
+    .content__box__main__articlebox__timebox__time
+      = post.created_at.strftime("%Y年%m月%d日 %H時%M分")
+    .content__box__main__articlebox__timebox__good
+      = "いいね"
+  .content__box__main__articlebox__tag
+    = "テーマ"
+  
