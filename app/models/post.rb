@@ -4,6 +4,8 @@ class Post < ApplicationRecord
   has_many :tags_posts
   has_many :tags, through: :tags_posts
 
+  validates :title, :content, presence: true
+
   #def save_blogs(tags)
     #current_tags = self.tags.pluck(:tag_name) unless self.tags.nil?
     #old_tags = current_tags -tags

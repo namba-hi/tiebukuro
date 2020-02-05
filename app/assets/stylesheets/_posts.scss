@@ -8,7 +8,7 @@
   margin: 0;
   box-sizing: border-box;
   position: relative;
-
+  overflow: scroll;
 
   .header {
     height: 62px;
@@ -165,7 +165,7 @@
       }
     }
     &__side {
-      height: 100%;
+      height: 90%;
       width: 28%;
       float: right;
       background-color: dimgrey;
