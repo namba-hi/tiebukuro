@@ -1,0 +1,9 @@
+.wrapper
+  = render "shared/header"
+
+  .content
+    .content__box
+      .content__username
+        = @nickname + "さんの記事"
+      = render "shared/side"
+      = render "shared/main"
