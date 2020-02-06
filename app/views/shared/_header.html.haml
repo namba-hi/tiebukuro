@@ -4,7 +4,7 @@
       = "Our wisdom bag"
     .header__box__right
       - if user_signed_in?
-        = link_to new_user_registration_path, class: "header__box__right__user" do
+        = link_to "/users/#{current_user.id}", class: "header__box__right__user" do
           = current_user.nickname
         = link_to destroy_user_session_path, class: "header__box__right__logout", method: :delete do
           = "ログアウト"

@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   get 'home/index'
   root "posts#index"
   resources :posts
+  resources :users, only: :show
 end
