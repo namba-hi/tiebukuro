@@ -6,22 +6,8 @@
   .content__box__side__theme-box
     .content__box__side__theme-box__theme
       = "テーマ"
-    .content__box__side__theme-box__article-box
-      = link_to "#", class: "content__box__side__theme-box__article-box__article" do
-        = "生活系(0)"
-      .content__box__side__theme-box__article-box
-        = link_to "#", class: "content__box__side__theme-box__article-box__article" do
-          = "人生経験(0)"
-      .content__box__side__theme-box__article-box
-        = link_to "#", class: "content__box__side__theme-box__article-box__article" do
-          = "料理系(0)"
-      .content__box__side__theme-box__article-box
-        = link_to "#", class: "content__box__side__theme-box__article-box__article" do
-          = "家事系(0)"
-      .content__box__side__theme-box__article-box
-        = link_to "#", class: "content__box__side__theme-box__article-box__article" do
-          = "その他(0)"
-
+    = render @tag
+    
       
 
      
