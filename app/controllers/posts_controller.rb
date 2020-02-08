@@ -1,7 +1,9 @@
 class PostsController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
+
   def index
     @post = Post.includes(:user).order("created_at DESC").page(params[:page]).per(5)
+    @tag = Tag.includes(:posts)
   end
 
   def new
@@ -48,6 +50,6 @@ class PostsController < ApplicationController
   end
 
   def set_tag
-    @tags = Tag.find(params[:tag_id])
+    @tag = Tag.find(params[:tag_id])
   end
 end
