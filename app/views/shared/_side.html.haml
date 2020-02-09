@@ -1,9 +1,9 @@
 .content__box__side
   .content__box__side__form
     .content__box__side__form__input-box
-      %input#s.content__box__side__input-box__searchform{:name => "s", :placeholder => "検索", :type => "text", :value => ""}/
-      %input.content__box__side__form__input-box__submit-btn{:name => "commit", :type => "submit", :value => "検索"}/
-  .content__box__side__theme-box
+      = form_tag '/posts/search', method: :get do
+        = text_field_tag :keyword
+        = submit_tag "検索"
     .content__box__side__theme-box__theme
       = "テーマ"
     = render @tag
