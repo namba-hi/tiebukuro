@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :move_to_index, except: [:index, :show]
+  before_action :move_to_index, except: [:index, :show, :search]
 
   def index
     @post = Post.includes(:user).order("created_at DESC").page(params[:page]).per(5)
@@ -39,8 +39,12 @@ class PostsController < ApplicationController
     redirect_to root_path
   end
 
-  private
+  def search
+    @post = Post.search(params[:keyword]).order("created_at DESC").page(params[:page]).per(5)
+    @tag = Tag.includes(:posts)
+  end
 
+  private
   def post_params
     params.require(:post).permit(:title, :content, :tag_ids).merge(user_id: current_user.id)
   end
