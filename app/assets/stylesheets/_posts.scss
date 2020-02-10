@@ -92,10 +92,13 @@
         border-width: 1px;
         margin-bottom: 10px;
         &__titlebox {
-          height: 70px;
+          height: 50px;
           width: 100%;
           padding: 20px 0;
           margin-left: 2px;
+          word-break: break-all;
+          overflow: hidden;
+          margin-bottom: 20px;
           &__title {
             font-size: 20px;
             text-decoration: none;
