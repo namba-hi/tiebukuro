@@ -10,4 +10,6 @@
   .content__box__main__articlebox__tag
     - post.tags.each do |tag|
       = tag.name
-  
+  .content__box__main__articlebox__tag
+    = "コメント："
+    = post.comments.count
