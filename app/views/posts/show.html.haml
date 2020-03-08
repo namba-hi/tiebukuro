@@ -23,9 +23,14 @@
           .showform__contentbox__content
             = simple_format(@post.content)
       .commentbox
-        = form_for [@post, @comment] do |f|
-          = f.text_area :text, placeholder: "コメントしよう", class: "commentbox__text"
-          = f.submit "送信", class: "commentbox__submit"
+        - if current_user
+          = form_for [@post, @comment] do |f|
+            = f.text_area :text, placeholder: "コメントしよう", class: "commentbox__text"
+            = f.submit "送信", class: "commentbox__submit"
+        - else
+          %strong
+            %p.commentbox__alert
+              ※※※ コメントの投稿には新規登録/ログインが必要です ※※※
         .commentbox__commentviewbox
           %h4.commentbox__commentviewbox__title
             = "<コメント一覧>"
