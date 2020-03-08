@@ -24,7 +24,7 @@
             = simple_format(@post.content)
       .commentbox
         = form_for [@post, @comment] do |f|
-          = f.text_field :text, placeholder: "コメントしよう", class: "commentbox__text"
+          = f.text_area :text, placeholder: "コメントしよう", class: "commentbox__text"
           = f.submit "送信", class: "commentbox__submit"
         .commentbox__commentviewbox
           %h4.commentbox__commentviewbox__title
@@ -33,10 +33,7 @@
               - if @comments
                 - @comments.each do |comment|
                   %p
-                    = comment.user.nickname + ":"
-                    = comment.text
-                  
-
-            
-        
-        
+                    = link_to "/users/#{comment.user_id}"  do
+                      = comment.user.nickname
+                    .commentbox__commentviewbox__title__comment__text
+                      = simple_format(comment.text)

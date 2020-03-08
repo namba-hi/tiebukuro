@@ -1,6 +1,6 @@
 .commentbox {
   width: 100%;
-  margin-top: 100px;
+  margin: 100px 0 100px 0;
   border-style: solid;
   border-width: 1px;
   &__text {
@@ -26,8 +26,18 @@
   .commentbox__commentviewbox {
     margin-top: 30px;
     &__title {
-      text-align: center;
+      margin-left: 100px;
       &__comment {
+        padding-top: 10px;
+        p {
+          margin-bottom: 0.3rem;
+          a {
+            text-decoration: none;
+          }
+        }
+        &__text {
+          margin-bottom: 15px;
+        }
       }
     }
   }
