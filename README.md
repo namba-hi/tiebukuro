@@ -1,25 +1,55 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## usersテーブル
+|Column|Type|Option|
+|------|----|------|
+|nickname|string|null: false|
+|encrypted_password|string|null: false|
+|email|string|null:false|
 
-Things you may want to cover:
+### Association
+- has_many :posts
+- has_many :comments
 
-* Ruby version
+## postsテーブル
+|Column|Type|Option|
+|------|----|------|
+|title|text|null :false|
+|content|text|null: false|
+|user_id|references|null: false, foreingn_key: true|
 
-* System dependencies
+### Association
+- belongs_to :user
+- has_many: comments, dependent: :destroy
+- has_many: posts_tags
+- has_many:tags, through: :posts_tags
+- has_many :tags_posts
+- has_many :tags, through: :tags_posts, dependent: :destroy
 
-* Configuration
+## commentsテーブル
+|Column|Type|Option|
+|------|----|------|
+|text|text|
+|user_id|integer|
+|post_id|integer|
 
-* Database creation
+### Association
+- belongs_to :post
+- belongs_to :user
 
-* Database initialization
+## tags_postsテーブル
+|Column|Type|Option|
+|tag_id|references|foreign key: true|
+|post_id|references|foreign key: true|
 
-* How to run the test suite
+### Association
+- belongs_to :tag
+- belongs_to :post
 
-* Services (job queues, cache servers, search engines, etc.)
+## tagsテーブル
+|Column|Type|Option|
+|name|string|null: false|
 
-* Deployment instructions
-
-* ...
-a
+### Association
+- has_many :tags_posts, dependent: :destroy
+- has_many :posts, through: :tags_posts
