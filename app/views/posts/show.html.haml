@@ -22,4 +22,21 @@
         .showform__contentbox
           .showform__contentbox__content
             = simple_format(@post.content)
+      .commentbox
+        = form_for [@post, @comment] do |f|
+          = f.text_field :text, placeholder: "コメントしよう", class: "commentbox__text"
+          = f.submit "送信", class: "commentbox__submit"
+        .commentbox__commentviewbox
+          %h4.commentbox__commentviewbox__title
+            = "<コメント一覧>"
+            .commentbox__commentviewbox__title__comment
+              - if @comments
+                - @comments.each do |comment|
+                  %p
+                    = comment.user.nickname + ":"
+                    = comment.text
+                  
+
+            
+        
         
