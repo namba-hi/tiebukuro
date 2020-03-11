@@ -1,29 +1,34 @@
 .wrapper
   = render "shared/header"
-  %h2 Sign up
-  = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-    = render "devise/shared/error_messages", resource: resource
-    .field
-      = f.label :nickname
-      %em
-        (6 characters maximum)
-      %br/
-      = f.text_field :nickname, autofocus: true, maxlength: "6"
-    .field
-      = f.label :email
-      %br/
-      = f.email_field :email, autofocus: true, autocomplete: "email"
-    .field
-      = f.label :password
-      - if @minimum_password_length
-        %em
-          (#{@minimum_password_length} characters minimum)
-      %br/
-      = f.password_field :password, autocomplete: "new-password"
-    .field
-      = f.label :password_confirmation
-      %br/
-      = f.password_field :password_confirmation, autocomplete: "new-password"
-    .actions
-      = f.submit "Sign up"
-  = render "devise/shared/links"
+  .signupcontent
+    .signupcontent__signup-box
+      %h2 新規登録
+      = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+        = render "devise/shared/error_messages", resource: resource
+        .signupcontent__signup-box__inputbox
+          = f.label :nickname
+          %em
+            (6文字以下の入力)
+          %br/
+          = f.text_field :nickname, autofocus: true, maxlength: "6"
+        .signupcontent__signup-box__inputbox
+          = f.label :email
+          %br/
+          = f.email_field :email, autofocus: true, autocomplete: "email"
+        .signupcontent__signup-box__inputbox
+          = f.label :password
+          - if @minimum_password_length
+            %em
+              (#{@minimum_password_length} 文字以上の入力)
+          %br/
+          = f.password_field :password, autocomplete: "new-password"
+        .signupcontent__signup-box__inputbox
+          = f.label :password_confirmation, "Password (もう一度ご入力ください)"
+          %br/
+          = f.password_field :password_confirmation, autocomplete: "new-password"
+        .signupcontent__signup-box__signupbtn
+          = f.submit "登録する"
+        .signupcontent__signup-box__userbox
+        %p
+          %span --アカウントを登録済みの方はこちら--
+        = link_to "ログインする", new_session_path(resource_name), class:"signupcontent__signup-box__userbox__btn"
