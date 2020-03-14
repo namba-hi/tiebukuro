@@ -1,0 +1,8 @@
+- if user_signed_in? && current_user.already_liked?(@post)
+  = link_to post_like_path(@post), class:"showform__like__btndelete", id:"likebtn", method: :delete, remote: true do
+    = icon('far', 'thumbs-up')
+    = @post.likes.count
+- else
+  = link_to post_likes_path(@post), class:"showform__like__btn", id:"likebtn", method: :post, remote: true do
+    = icon('far', 'thumbs-up')
+    = @post.likes.count
