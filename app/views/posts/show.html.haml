@@ -12,15 +12,9 @@
               = link_to "編集", "/posts/#{@post.id}/edit", class: "showform__box__editbox__edit", method: :get
             .showform__box__deletebox
               = link_to "削除", "#", class: "showform__box__deletebox__delete", method: :delete
-        .showform__like
-          - if user_signed_in? && current_user.already_liked?(@post)
-            = link_to post_like_path(@post), method: :delete do
-              = icon('far', 'thumbs-up')
-              = @post.likes.count
-          - else
-            = link_to post_likes_path(@post), method: :post do
-              = icon('far', 'thumbs-up')
-              = @post.likes.count
+        %span
+          .showform__like{ "id": "like"}
+            = render partial: "likes/like", loacals: { post: @post, like: @like, likes: @likes }
         .showform__titlebox
           .showform__titlebox__title
             = @post.title
