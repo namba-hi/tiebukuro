@@ -12,4 +12,9 @@ class Post < ApplicationRecord
     return Post.all unless search
     Post.where('title LIKE(?)', "#{search}%")
   end
+
+
+  def liked_by?(user_id)
+    likes.where(user_id: user.id).exists?
+  end
 end
