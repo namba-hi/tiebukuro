@@ -167,7 +167,7 @@
 - has_many :posts, through: :tags_posts
 - has_many :posts, through: :tags_posts
 
-# likesテーブル
+## likesテーブル
 
 |Column|Type|Option|
 |------|----|------|
