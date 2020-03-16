@@ -49,7 +49,7 @@
 
 - 名前をクリックしたときの画面。
 
-<img width="1792" alt="スクリーンショット 2020-03-16 0 46 00" src="https://user-images.githubusercontent.com/59820860/76704934-aea64200-671f-11ea-901f-d5a254c53f7d.png">
+<img width="1792" alt="スクリーンショット 2020-03-16 12 02 42" src="https://user-images.githubusercontent.com/59820860/76719791-25722800-677e-11ea-9dea-f3b4c8dc1c1b.png">
 
 
 
