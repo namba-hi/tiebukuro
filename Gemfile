@@ -59,3 +59,4 @@ gem 'jquery-rails'
 gem 'pry-rails'
 gem 'font-awesome-sass'
 gem 'jquery-rails'
+gem 'rails_12factor', group: :production
