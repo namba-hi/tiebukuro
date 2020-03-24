@@ -2,10 +2,10 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import "mixin/mixin";
-@import "posts";
-@import "login";
-@import "signup";
-@import "form";
-@import "showform";
-@import "comments";
+@import "post/posts";
+@import "user/login";
+@import "user/signup";
+@import "modules/form";
+@import "post/showform";
+@import "comment/comments";
 @import "bootstrap";
